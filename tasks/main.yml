@@ -1,4 +1,8 @@
 ---
+- set_fact:
+    tlsEnabled: "{{ tsuru_api_docker_tls_enabled }}"
+  tags: always
+
 - name: install dependencies
   package:
     name: python-docker-py
@@ -28,7 +32,7 @@
     - content: "{{ tsuru_api_docker_tls_privkey }}"
       dest: "key.pem"
       mode: "0600"
-  when: tsuru_api_docker_tls_enabled
+  when: tlsEnabled
   notify: restart tsuru api
 
 - name: write tsuru config
