@@ -1,7 +1,7 @@
 ---
 ### Container Tsuru API Template
 tsuru_api_container_name: "tsuru-api"
-tsuru_api_container_image: "tsuru/api:v1.2.1"
+tsuru_api_container_image: "tsuru/api:v1.2.2"
 tsuru_api_container_state: "started"
 tsuru_api_container_network_mode: "host"
 tsuru_api_container_restart_policy: "always"
