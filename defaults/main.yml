@@ -43,6 +43,7 @@ tsuru_api_sentinels:
     master: ""
     address: ""
     password: ""
+    db: 0
 
 # Tsuru Simple Redis Confs
 tsuru_api_redis_address: ""
