@@ -59,11 +59,12 @@ routers:
     type: {{ tsuru_router.type }}
     domain: {{ tsuru_router.domain }}
 {% if tsuru_router.sentinel_enabled %}
-{% for tsuru_sentinel in tsuru_sentinels %}
+{% for tsuru_sentinel in tsuru_api_sentinels %}
 {% if tsuru_sentinel.name == tsuru_router.sentinel_name %}
     redis-sentinel-addrs: {{ tsuru_sentinel.address }}
     redis-sentinel-master: {{ tsuru_sentinel.master|default(tsuru_api_sentinel_master_all) }}
     redis-password: {{ tsuru_sentinel.password|default(tsuru_api_sentinel_password_all) }}
+    redis-db: {{ tsuru_sentinel.db|default(0) }}
 {% endif %}
 {% endfor %}
 {% else %}
