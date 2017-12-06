@@ -18,6 +18,10 @@ tsuru_api_hash_cost: "4"
 tsuru_api_user_registration: "false"
 tsuru_api_debug: "false"
 
+# Tsuru Server API Confs
+tsuru_api_server_read_timeout: 0
+tsuru_api_server_write_timeout: 0
+
 # Tsuru TLS Confs
 tsuru_api_tls_enabled: false
 tsuru_api_tls_tsuru_cert: ""
