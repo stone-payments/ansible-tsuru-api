@@ -14,6 +14,9 @@ tls:
     key-file: {{ tsuru_api_tls_tsuru_key }}
 {% endif %}
 repo-manager: {{ tsuru_api_repo_manager }}
+server:
+  read-timeout: {{ tsuru_api_server_read_timeout | default(0) }}
+  write-timeout: {{ tsuru_api_server_write_timeout | default(0) }}
 {% if tsuru_api_smtp_server != "" %}
 smtp:
   server: {{ tsuru_api_smtp_server }}
